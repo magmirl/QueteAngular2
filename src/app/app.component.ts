@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Magalie Mirloup';
+  title = 'Raclette party'/*Magalie*/;
+
+  isThisIngredientVital:boolean = true;
+
+  displayGuestList:boolean = true;
+  showMovies:boolean=true;
+
+  songList:string[] = ["Alejandro", "Ne me quitte pas", "Le temps est bon"];
+
 }
