@@ -1,5 +1,5 @@
 export class Model {
-    title: string;
+    user: string;
     quantity: number;
     email: string;
 

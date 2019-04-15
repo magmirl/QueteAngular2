@@ -37,9 +37,15 @@
   </div>
 
   <div>
-    <label for="title-order">User</label>
-    <input [(ngModel)]="model.title" name="title-order" type="text" required> 
-  </div>
+      <label for="user-order">User</label>
+      <input [(ngModel)]="model.user" name="user-order" #user="ngModel" required user maxlength="25" minlength="4">
+    </div>
+  
+    <div *ngIf="user.errors && myForm.submitted" >
+      <span *ngIf="user.errors.required">Le champs User est requis</span>
+      <span *ngIf="user.errors.maxlength">Le champs user ne doit pas dépasser 25 caractères</span>
+      <span *ngIf="user.errors.minlength">Le champs user doit avoir au minimum 4 caractères</span>
+    </div>
 
 <br>
 
