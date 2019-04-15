@@ -28,3 +28,50 @@
 <hr>
 <h1 appHightLight>Raclette</h1>
 
+
+<form (ngSubmit)="myForm.valid && onSubmit()" #myForm="ngForm">
+  <div>
+    Form submitted ? {{myForm.submitted}}
+    Form valid ? {{myForm.valid}}
+    Form invalid ? {{myForm.valid}}
+  </div>
+
+  <div>
+    <label for="title-order">User</label>
+    <input [(ngModel)]="model.title" name="title-order" type="text" required> 
+  </div>
+
+<br>
+
+  <div>
+    <label for="quantity-order">Quantité</label>
+    <input [(ngModel)]="model.quantity" name="quantity-order" type="number" #quantity="ngModel" required maxlength="25" minlength="4">
+  </div>
+
+  <div *ngIf="quantity.errors && myForm.submitted" >
+    <span *ngIf="quantity.errors.required">Le champs quantité est requis</span>
+    <span *ngIf="quantity.errors.maxlength">Le champs user ne doit pas dépasser 25 caractères</span>
+    <span *ngIf="quantity.errors.minlength">Le champs user doit avoir au minimum 4 caractères</span>
+
+  </div>
+
+<br>
+
+
+  <div>
+      <label for="email-order">Email</label>
+      <input [(ngModel)]="model.email" name="email-order" type="email" #email="ngModel" required email>
+  </div>
+
+  <div *ngIf="email.errors  && myForm.submitted">
+      <span *ngIf="email.errors.required">Le champs est requis</span>
+      <span *ngIf="email.errors.email">Le champs email est invalide</span>
+  </div>
+
+<br>
+
+ <button type="reset">Restaurer</button>
+ <button type="submit">Sauvegarder</button>
+
+</form>
+

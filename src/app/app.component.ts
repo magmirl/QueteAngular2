@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Model } from './model';
 
 @Component({
   selector: 'app-root',
@@ -11,8 +12,16 @@ export class AppComponent {
   isThisIngredientVital:boolean = true;
 
   displayGuestList:boolean = true;
-  showMovies:boolean=true;
+  showMovies:boolean=false;
+
+  public model = new Model(); 
 
   songList:string[] = ["Alejandro", "Ne me quitte pas", "Le temps est bon"];
+  
+  onSubmit() {
+    // form submitted
+    console.log('form submitted');
+  }
 
+  
 }
