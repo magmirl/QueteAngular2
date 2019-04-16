@@ -1,4 +1,4 @@
-<ul>
+<!--<ul>
   <li>Pommes de terre</li>
   <li [ngStyle]="{backgroundColor: isThisIngredientVital ? 'red' : 'yellow'}">Raclette</li>
   <li>Jambon</li>
@@ -79,5 +79,15 @@
  <button type="reset">Restaurer</button>
  <button type="submit">Sauvegarder</button>
 
-</form>
+</form>>-->
 
+<ul>
+  <li>
+    <a [routerLink]="['/sign-up']">sign-up</a>
+  </li>
+  <li>
+    <a [routerLink]="['/user-profile']">user profite</a>
+  </li>
+</ul>
+
+<router-outlet></router-outlet>
